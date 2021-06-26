@@ -1,0 +1,17 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/CGZT.School.Demo/.vs/CGZT.School.Demo
+/.vs
+/CGZT.School.Demo/bin/Debug/net5.0
+/CGZT.School.Demo/obj
+/CGZT.School.Demo.Business/obj
+/CGZT.School.Demo.Common/obj
+/CGZT.School.Demo.Contracts/obj
+/CGZT.School.Demo.DataAccess/obj
+/CGZT.School.Demo.Database/obj/Debug
+/CGZT.School.Demo.DataContext/obj
+/CGZT.School.Demo.Entities/obj
+/CGZT.School.Demo.Resources/obj
+/CGZT.School.Demo.UnitTest/obj
