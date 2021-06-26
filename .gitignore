@@ -16,3 +16,11 @@
 /CGZT.School.Demo.Resources/obj
 /CGZT.School.Demo.UnitTest/obj
 /CGZT.School.Demo.Database/bin/Debug
+/CGZT.School.Demo.Business/bin/Debug/net5.0
+/CGZT.School.Demo.Common/bin/Debug/net5.0
+/CGZT.School.Demo.Contracts/bin/Debug/net5.0
+/CGZT.School.Demo.DataAccess/bin/Debug/net5.0
+/CGZT.School.Demo.DataContext/bin/Debug/net5.0
+/CGZT.School.Demo.Entities/bin/Debug/net5.0
+/CGZT.School.Demo.Resources/bin/Debug/net5.0
+/CGZT.School.Demo.UnitTest/bin/Debug/net5.0
