@@ -4,4 +4,24 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CGZT.School.Demo.Contracts\CGZT.School.Demo.Contracts.csproj" />
+    <ProjectReference Include="..\CGZT.School.Demo.Entities\CGZT.School.Demo.Entities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Teacher\TeacherDetailsErrorResourceMessageHandler.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TeacherDetailsErrorResourceMessageHandler.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Teacher\TeacherDetailsErrorResourceMessageHandler.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TeacherDetailsErrorResourceMessageHandler.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>
