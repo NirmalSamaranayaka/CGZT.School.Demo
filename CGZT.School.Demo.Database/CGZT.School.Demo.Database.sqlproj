@@ -72,6 +72,8 @@
     <Build Include="Tables\Demo_T_Student.sql" />
     <Build Include="Tables\Demo_T_Teacher.sql" />
     <Build Include="Tables\Demo_T_TeacherStudentMapping.sql" />
+    <Build Include="Tables\Demo_T_Notification.sql" />
+    <Build Include="Tables\Demo_T_NotificationRecipient.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="PostDeployment\PostDeployment.sql" />

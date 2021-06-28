@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CGZT.School.Demo.Entities.DTO.Student
+namespace CGZT.School.Demo.Entities.DTO.StudentTeacher
 {
-    public class Student:BaseEntity
+    public class Teacher :BaseEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }

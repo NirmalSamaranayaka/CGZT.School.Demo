@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Wrapper\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\CGZT.School.Demo.Common\CGZT.School.Demo.Common.csproj" />
     <ProjectReference Include="..\CGZT.School.Demo.Contracts\CGZT.School.Demo.Contracts.csproj" />
   </ItemGroup>

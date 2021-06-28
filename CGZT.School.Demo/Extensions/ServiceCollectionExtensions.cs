@@ -1,6 +1,9 @@
 ﻿using CGZT.School.Demo.Business.Managers;
 using CGZT.School.Demo.Business.Mappers;
+using CGZT.School.Demo.Business.Mappers.Notification;
+using CGZT.School.Demo.Business.Mappers.Student;
 using CGZT.School.Demo.Business.Validators;
+using CGZT.School.Demo.Business.Wrapper;
 using CGZT.School.Demo.Contracts.Common;
 using CGZT.School.Demo.Contracts.Manager;
 using CGZT.School.Demo.Contracts.MessageHandlers;
@@ -10,7 +13,9 @@ using CGZT.School.Demo.DataAccess.Repository;
 using CGZT.School.Demo.DataContext.DemoDbContext;
 using CGZT.School.Demo.Entities;
 using CGZT.School.Demo.Entities.Common;
-using CGZT.School.Demo.Entities.DTO.Teacher;
+using CGZT.School.Demo.Entities.DTO.Notification;
+using CGZT.School.Demo.Entities.DTO.StudentTeacher;
+using CGZT.School.Demo.Resources.Student;
 using CGZT.School.Demo.Resources.Teacher;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.ResponseCompression;
@@ -34,17 +39,24 @@ namespace CGZT.School.Demo.WebAPI.Extensions
 
             #region Managers
             services.AddScoped<ITeacherDetailsManager, TeacherDetailsManager>();
+            services.AddScoped<IStudentDetailsManager, StudentDetailsManager>();
+            services.AddScoped<IStudentTeacherDetailsManager, StudentTeacherDetailsManager>();
+            services.AddScoped<INotificationDetailsManager, NotificationDetailsManager>();
             #endregion
 
             //#region Repos
             services.AddScoped<ITeacherDetailsRepository, TeacherDetailsRepository>();
             services.AddScoped<IStudentDetailsRepository, StudentDetailsRepository>();
+            services.AddScoped<IStudentTeacherDetailsRepository, StudentTeacherDetailsRepository>();
+            services.AddScoped<INotificationDetailsRepository, NotificationDetailsRepository>();
             //#endregion
 
             #region Mappers
             services.AddSingleton<IEntityMapper, EntityMapper>();
             services.AddSingleton<IMapper<IList<Message>, ServiceResponse>, ServiceErrorMapper>();
             services.AddSingleton<IMapper<Object, ServiceResponse>, ServiceResponseMapper>();
+            services.AddSingleton<IMapper<StudentDataMapperWrapper, Students>, StudentDataMapper>();
+            services.AddSingleton<IMapper<NotificationDataMapperWrapper, NotificationRecipients>, NotificationDataMapper>();
             #endregion
 
             #region utils
@@ -52,11 +64,14 @@ namespace CGZT.School.Demo.WebAPI.Extensions
 
             #region Validators
             services.AddScoped<IValidator<Teacher>, TeacherDetailsValidator>();
+            services.AddScoped<IValidator<Students>, StudentDetailsValidator>();
             #endregion
 
             #region ErrorHandlers
             services.AddSingleton<ITeacherDetailsErrorMessageHandler,
                          TeacherDetailsErrorMessageHandler>();
+            services.AddSingleton<IStudentDetailsErrorMessageHandler,
+                         StudentDetailsErrorMessageHandler>();
             #endregion
 
             #region DBContext

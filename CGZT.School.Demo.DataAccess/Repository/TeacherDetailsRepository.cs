@@ -1,7 +1,7 @@
 ﻿using CGZT.School.Demo.Contracts.Repository;
 using CGZT.School.Demo.DataContext.DemoDataModels;
 using CGZT.School.Demo.DataContext.DemoDbContext;
-using CGZT.School.Demo.Entities.DTO.Teacher;
+using CGZT.School.Demo.Entities.DTO.StudentTeacher;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -70,9 +70,9 @@ namespace CGZT.School.Demo.DataAccess.Repository
         /// </summary>
         /// <param name="email">The email.</param>
         /// <returns></returns>
-        public bool SelectSpecificTeacherDetailByEmail(string email)
+        public Teacher SelectSpecificTeacherDetailByEmail(string email)
         {
-            return base.Any(p => p.Email.ToLower() == email.ToLower());
+            return base.SingleOrDefault(p => p.Email.ToLower() == email.ToLower());
         }
 
         /// <summary>

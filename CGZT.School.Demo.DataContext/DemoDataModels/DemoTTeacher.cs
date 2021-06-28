@@ -9,6 +9,7 @@ namespace CGZT.School.Demo.DataContext.DemoDataModels
     {
         public DemoTTeacher()
         {
+            DemoTNotifications = new HashSet<DemoTNotification>();
             DemoTTeacherStudentMappings = new HashSet<DemoTTeacherStudentMapping>();
         }
 
@@ -21,6 +22,7 @@ namespace CGZT.School.Demo.DataContext.DemoDataModels
         public string UpdatedBy { get; set; }
         public DateTime? UpdatedAt { get; set; }
 
+        public virtual ICollection<DemoTNotification> DemoTNotifications { get; set; }
         public virtual ICollection<DemoTTeacherStudentMapping> DemoTTeacherStudentMappings { get; set; }
     }
 }

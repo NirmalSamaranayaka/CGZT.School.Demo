@@ -1,7 +1,7 @@
 ﻿using CGZT.School.Demo.Contracts.Repository;
 using CGZT.School.Demo.DataContext.DemoDataModels;
 using CGZT.School.Demo.DataContext.DemoDbContext;
-using CGZT.School.Demo.Entities.DTO.Student;
+using CGZT.School.Demo.Entities.DTO.StudentTeacher;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ namespace CGZT.School.Demo.DataAccess.Repository
     /// </summary>
     /// <seealso cref="CGZT.School.Demo.DataAccess.Repository.GenericDataRepository{CGZT.School.Demo.DataContext.DemoDataModels.DemoTStudent, CGZT.School.Demo.Entities.DTO.Student.Student}" />
     /// <seealso cref="CGZT.School.Demo.Contracts.Repository.IStudentDetailsRepository" />
-    public class StudentDetailsRepository : GenericDataRepository<DemoTStudent, Student>, IStudentDetailsRepository
+    public class StudentDetailsRepository : GenericDataRepository<DemoTStudent, Students>, IStudentDetailsRepository
     {
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace CGZT.School.Demo.DataAccess.Repository
         /// Gets all student detail asynchronous.
         /// </summary>
         /// <returns></returns>
-        public async Task<List<Student>> GetAllStudentDetailAsync()
+        public async Task<List<Students>> GetAllStudentDetailAsync()
         {
             return await base.GetAllAsync();
         }
@@ -40,7 +40,7 @@ namespace CGZT.School.Demo.DataAccess.Repository
         /// </summary>
         /// <param name="cmodityDetail">The cmodity detail.</param>
         /// <returns></returns>
-        public Student AddStudentDetail(Student cmodityDetail)
+        public Students AddStudentDetail(Students cmodityDetail)
         {
             return base.InsertModel(cmodityDetail);
         }
@@ -50,7 +50,7 @@ namespace CGZT.School.Demo.DataAccess.Repository
         /// </summary>
         /// <param name="cmodityDetail">The cmodity detail.</param>
         /// <returns></returns>
-        public Student UpdateStudentDetail(Student cmodityDetail)
+        public Students UpdateStudentDetail(Students cmodityDetail)
         {
             return base.UpdateModel(cmodityDetail);
         }
@@ -60,7 +60,7 @@ namespace CGZT.School.Demo.DataAccess.Repository
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
-        public Student SelectSpecificStudentDetail(int id)
+        public Students SelectSpecificStudentDetail(int id)
         {
             return base.SingleOrDefault(p => p.Id == id);
         }
@@ -70,7 +70,7 @@ namespace CGZT.School.Demo.DataAccess.Repository
         /// </summary>
         /// <param name="email">The email.</param>
         /// <returns></returns>
-        public Student SelectSpecificStudentDetailByEmail(string email)
+        public Students SelectSpecificStudentDetailByEmail(string email)
         {
             return base.SingleOrDefault(p => p.Email.ToLower() == email.ToLower());
         }

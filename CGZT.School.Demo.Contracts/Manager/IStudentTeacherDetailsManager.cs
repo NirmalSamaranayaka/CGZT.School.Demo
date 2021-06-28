@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace CGZT.School.Demo.Contracts.Manager
 {
-    public interface ITeacherDetailsManager
+    public interface IStudentTeacherDetailsManager
     {
-        Task<ServiceResponse> GetTeacherDetailsList();
-        ServiceResponse InsertTeacherDetails(Teacher TeacherDetail);
-        ServiceResponse UpdateTeacherDetails(Teacher TeacherDetail);
+        ServiceResponse GetTeacherWiseStudentDetails();
+        ServiceResponse GetTeacherWiseStudentDetails(List<string> teacher);
+        ServiceResponse AddTeacherWiseStudentDetails(TeacherStudentMapping request);
     }
 }

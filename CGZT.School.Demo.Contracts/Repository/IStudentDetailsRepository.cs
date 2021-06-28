@@ -1,4 +1,4 @@
-﻿using CGZT.School.Demo.Entities.DTO.Student;
+﻿using CGZT.School.Demo.Entities.DTO.StudentTeacher;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +9,11 @@ namespace CGZT.School.Demo.Contracts.Repository
 {
     public interface IStudentDetailsRepository
     {
-        Student AddStudentDetail(Student cmodityDetail);
-        Task<List<Student>> GetAllStudentDetailAsync();
+        Students AddStudentDetail(Students cmodityDetail);
+        Task<List<Students>> GetAllStudentDetailAsync();
         bool IsExistStudentDetail(string name);
-        Student SelectSpecificStudentDetail(int id);
-        Student SelectSpecificStudentDetailByEmail(string email);
-        Student UpdateStudentDetail(Student cmodityDetail);
+        Students SelectSpecificStudentDetail(int id);
+        Students SelectSpecificStudentDetailByEmail(string email);
+        Students UpdateStudentDetail(Students cmodityDetail);
     }
 }

@@ -10,6 +10,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Student\StudentDetailsErrorResourceMessageHandler.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>StudentDetailsErrorResourceMessageHandler.resx</DependentUpon>
+    </Compile>
     <Compile Update="Teacher\TeacherDetailsErrorResourceMessageHandler.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -18,6 +23,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Student\StudentDetailsErrorResourceMessageHandler.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StudentDetailsErrorResourceMessageHandler.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Update="Teacher\TeacherDetailsErrorResourceMessageHandler.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>TeacherDetailsErrorResourceMessageHandler.Designer.cs</LastGenOutput>

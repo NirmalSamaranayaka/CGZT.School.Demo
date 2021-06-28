@@ -11,17 +11,16 @@ using System.Threading.Tasks;
 
 namespace CGZT.School.Demo.Business.Validators
 {
-
-    public class TeacherDetailsValidator : IValidator<Teacher>
+    public class StudentDetailsValidator : IValidator<Students>
     {
-        private readonly ITeacherDetailsErrorMessageHandler _teacherDetailsErrorMessageHandler;
+        private readonly IStudentDetailsErrorMessageHandler _studentDetailsErrorMessageHandler;
 
-        private readonly ITeacherDetailsRepository _teacherDetailsRepository;
+        private readonly IStudentDetailsRepository _studentDetailsRepository;
 
-        public TeacherDetailsValidator(ITeacherDetailsErrorMessageHandler teacherDetailsErrorMessageHandler, ITeacherDetailsRepository teacherDetailsRepository)
+        public StudentDetailsValidator(IStudentDetailsErrorMessageHandler studentDetailsErrorMessageHandler, IStudentDetailsRepository studentDetailsRepository)
         {
-            _teacherDetailsErrorMessageHandler = teacherDetailsErrorMessageHandler;
-            _teacherDetailsRepository = teacherDetailsRepository;
+            _studentDetailsErrorMessageHandler = studentDetailsErrorMessageHandler;
+            _studentDetailsRepository = studentDetailsRepository;
         }
 
         /// <summary>
@@ -32,19 +31,20 @@ namespace CGZT.School.Demo.Business.Validators
         /// <returns>
         /// validation status
         /// </returns>
-        bool IValidator<Teacher>.Validate(Teacher obj, out IList<Message> messages)
+        bool IValidator<Students>.Validate(Students obj, out IList<Message> messages)
         {
             bool isNewUser = obj.Id == 0 ? true : false;
 
             messages = new List<Message>();
 
-            var existingUserObj = _teacherDetailsRepository.SelectSpecificTeacherDetailByEmail(obj.Email);
+            var existingUserObj = _studentDetailsRepository.SelectSpecificStudentDetailByEmail(obj.Email);
 
             if (isNewUser)
             {
+
                 if (existingUserObj != null)
                 {
-                    messages.Add(_teacherDetailsErrorMessageHandler.TeacherDetailAlreadyExists());
+                    messages.Add(_studentDetailsErrorMessageHandler.StudentDetailAlreadyExists());
                 }
 
             }
@@ -53,12 +53,13 @@ namespace CGZT.School.Demo.Business.Validators
 
                 if (existingUserObj != null && existingUserObj.Id != obj.Id)
                 {
-                    messages.Add(_teacherDetailsErrorMessageHandler.TeacherDetailAlreadyExists());
+                    messages.Add(_studentDetailsErrorMessageHandler.StudentDetailAlreadyExists());
 
                 }
 
             }
 
+            
             if (messages.Count > 0)
             {
                 return false;
@@ -77,11 +78,10 @@ namespace CGZT.School.Demo.Business.Validators
             GC.SuppressFinalize(this);
         }
 
-        ~TeacherDetailsValidator()
+        ~StudentDetailsValidator()
         {
             Dispose(false);
         }
     }
-
 
 }

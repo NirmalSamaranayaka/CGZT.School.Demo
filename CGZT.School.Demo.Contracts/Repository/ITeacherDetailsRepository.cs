@@ -1,4 +1,4 @@
-﻿using CGZT.School.Demo.Entities.DTO.Teacher;
+﻿using CGZT.School.Demo.Entities.DTO.StudentTeacher;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +13,7 @@ namespace CGZT.School.Demo.Contracts.Repository
         Task<List<Teacher>> GetAllTeacherDetailAsync();
         bool IsExistTeacherDetail(string name);
         Teacher SelectSpecificTeacherDetail(int id);
-        bool SelectSpecificTeacherDetailByEmail(string email);
+        Teacher SelectSpecificTeacherDetailByEmail(string email);
         Teacher UpdateTeacherDetail(Teacher cmodityDetail);
     }
 }
