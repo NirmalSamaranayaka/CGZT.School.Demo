@@ -1,6 +1,12 @@
 # School Management System
 Project Setup Steps
-1.Open ".Sln" file via Visual studio
+1.Open ".Sln" file via Visual studio 
+Then you can see basic project layors as below. This project used SOLID principle with Adapter design pattern with multi layored architecture. This project is build in very generic way and able to extend very easily
+Used Technologies : Asp.net core 5.0 Web API, Entity Framwork Core, Automapper,.net Core Dependency resolver, .net core Logger, Recorces file for Error Messages
+
+
+![image](https://user-images.githubusercontent.com/86515501/124052551-3c12c000-da51-11eb-83cd-5073f843d1a1.png)
+
 
 Database Setup(SQL SERVER)
 2.---Step 1 Create DB and Create User with Schema and map schema secutity
