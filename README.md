@@ -47,6 +47,8 @@ GO
 
 
 3. Publish Database Table via Database Project
+
+Below you can see database project and please follow given instructions to deploy detabase to sql server
 ![Untitled](https://user-images.githubusercontent.com/86515501/124054459-a24d1200-da54-11eb-8edb-553f2c882f82.png)
 
 right click Database project and Click "Publish" buton
