@@ -57,8 +57,6 @@ This is very good feature for handling database related Table, Stored procedure,
 
 right click Database project and Click "Publish" buton
 
-![124050958-2223ae00-da4e-11eb-922c-deef70652ea0](https://user-images.githubusercontent.com/86515501/124053758-636a8c80-da53-11eb-8a2d-34ab3d44ca1c.png)
-
 After Click "Publish" will come popup as below
 ![124051415-11276c80-da4f-11eb-9c6e-61890eedc332](https://user-images.githubusercontent.com/86515501/124055110-e1c82e00-da55-11eb-8f4e-924a95bfbbc0.png)
 
@@ -67,6 +65,8 @@ Ten please setup give your server, Database, user name and password and then che
 ![image](https://user-images.githubusercontent.com/86515501/124051316-d7eefc80-da4e-11eb-9e15-5944c2b3ab1d.png)
 
 After configure server you will be able to see below window and then press "Publish"button
+
+![124050958-2223ae00-da4e-11eb-922c-deef70652ea0](https://user-images.githubusercontent.com/86515501/124053758-636a8c80-da53-11eb-8a2d-34ab3d44ca1c.png)
 
 ![image](https://user-images.githubusercontent.com/86515501/124051415-11276c80-da4f-11eb-9c6e-61890eedc332.png
 
