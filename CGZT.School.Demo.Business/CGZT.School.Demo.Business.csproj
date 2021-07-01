@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CGZT.School.Demo.Common\CGZT.School.Demo.Common.csproj" />
+    <ProjectReference Include="..\CGZT.School.Demo.Contracts\CGZT.School.Demo.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

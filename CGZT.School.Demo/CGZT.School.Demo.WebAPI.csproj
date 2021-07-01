@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.15.0" />
+    <PackageReference Include="Serilog" Version="2.10.0" />
+    <PackageReference Include="Serilog.Extensions.Logging.File" Version="2.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CGZT.School.Demo.Business\CGZT.School.Demo.Business.csproj" />
+    <ProjectReference Include="..\CGZT.School.Demo.Common\CGZT.School.Demo.Common.csproj" />
+    <ProjectReference Include="..\CGZT.School.Demo.Contracts\CGZT.School.Demo.Contracts.csproj" />
+    <ProjectReference Include="..\CGZT.School.Demo.DataAccess\CGZT.School.Demo.DataAccess.csproj" />
+    <ProjectReference Include="..\CGZT.School.Demo.DataContext\CGZT.School.Demo.DataContext.csproj" />
+    <ProjectReference Include="..\CGZT.School.Demo.Resources\CGZT.School.Demo.Resources.csproj" />
+  </ItemGroup>
+
+</Project>
