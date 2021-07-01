@@ -1,5 +1,6 @@
 # School Management System
-1. Project Setup Steps
+1. Project Setup Step steps
+
 *Open "CGZT.School.Demo.sln" file using Visual studio 
 
 Then you can see basic project layors as below. 
