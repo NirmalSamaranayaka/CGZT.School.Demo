@@ -45,7 +45,7 @@ GO
 
 right click Database project and Click "Publish" buton
 
-![image](https://user-images.githubusercontent.com/86515501/124050958-2223ae00-da4e-11eb-922c-deef70652ea0.png)
+![124050958-2223ae00-da4e-11eb-922c-deef70652ea0](https://user-images.githubusercontent.com/86515501/124053758-636a8c80-da53-11eb-8a2d-34ab3d44ca1c.png)
 
 After Click "Publish" will come popup as below
 ![image](https://user-images.githubusercontent.com/86515501/124051018-39629b80-da4e-11eb-8b2f-e4aad97ca303.png)
