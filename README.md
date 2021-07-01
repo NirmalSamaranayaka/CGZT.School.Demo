@@ -1,6 +1,6 @@
 # School Management System
-Project Setup Steps
-1.Open "CGZT.School.Demo.sln" file using Visual studio 
+1. Project Setup Steps
+*Open "CGZT.School.Demo.sln" file using Visual studio 
 
 Then you can see basic project layors as below. 
 
@@ -8,38 +8,37 @@ Then you can see basic project layors as below.
 
 This project used SOLID principle with Adapter design pattern with multi layored architecture. This project is build in very generic way and able to extend very easily
 
-Used Technologies : Asp.net core 5.0 Web API, Entity Framwork Core, Automapper,.net Core Dependency resolver, .net core Logger, Swagger for API testing, Recorces file for Error Messages
+Used Technologies : Asp.net core 5.0 Web API, Entity Framwork Core, Automapper,.net Core Dependency resolver, .net core Logger, Swagger for API testing, Recorces file for Error Messages, SQL server
 
-
-
-Database Setup(SQL SERVER)
-2.---Step 1 Create DB and Create User with Schema and map schema secutity
+------------------------------------------------------------------------------------------------------------------------------------------
+2. Database Setup(SQL SERVER)
+*Step 1 Create DB and Create User with Schema and map schema secutity
 Create Database [cgzt-school-db-dev]
 
---Create User Login
+*Create User Login
 CREATE LOGIN [cgztdev] WITH PASSWORD = 'pass#word1'
 
---User map with Login
+*User map with Login
 CREATE USER [cgztdev] FOR LOGIN [cgztdev]
 
----Step 2
+*Step 2
 USE [cgzt-school-db-dev]
 CREATE SCHEMA [cgzt]
 
 
----Step 3
+*Step 3
 --user mapp with schema
 CREATE USER [cgztdev]
 	FOR LOGIN [cgztdev]
 	WITH DEFAULT_SCHEMA = [cgzt]
 GO
 
--- Add user to the database owner role
+*Add user to the database owner role
 EXEC sp_addrolemember N'db_owner', [cgztdev]
 GO
 
 
-3.Publish Database Table via Database Project
+3. Publish Database Table via Database Project
 
 ![image](https://user-images.githubusercontent.com/86515501/124050686-9b6ed100-da4d-11eb-8a57-a269fcefec56.png)
 
