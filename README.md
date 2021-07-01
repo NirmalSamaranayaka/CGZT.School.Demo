@@ -13,6 +13,11 @@ Used Technologies : Asp.net core 5.0 Web API, Entity Framwork Core, Automapper,.
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 2. Database Setup(SQL SERVER)
+
+Go to "CGZT.School.Demo.Database" project and open "DatabaseCreationwithUserMapping.sql" script and follow given steps as below
+
+![image](https://user-images.githubusercontent.com/86515501/124054014-cf4cf500-da53-11eb-85ac-395753509616.png)
+
 *Step 1 Create DB and Create User with Schema and map schema secutity
 Create Database [cgzt-school-db-dev]
 
@@ -39,9 +44,10 @@ EXEC sp_addrolemember N'db_owner', [cgztdev]
 GO
 
 
-3. Publish Database Table via Database Project
 
-![image](https://user-images.githubusercontent.com/86515501/124050686-9b6ed100-da4d-11eb-8a57-a269fcefec56.png)
+
+3. Publish Database Table via Database Project
+![Untitled](https://user-images.githubusercontent.com/86515501/124054459-a24d1200-da54-11eb-8edb-553f2c882f82.png)
 
 right click Database project and Click "Publish" buton
 
