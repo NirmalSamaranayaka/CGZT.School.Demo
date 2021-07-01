@@ -18,28 +18,28 @@ Go to "CGZT.School.Demo.Database" project and open "DatabaseCreationwithUserMapp
 
 ![image](https://user-images.githubusercontent.com/86515501/124054014-cf4cf500-da53-11eb-85ac-395753509616.png)
 
-*Step 1 Create DB and Create User with Schema and map schema secutity
+--Step 1 Create DB and Create User with Schema and map schema secutity
 Create Database [cgzt-school-db-dev]
 
-*Create User Login
+Create User Login
 CREATE LOGIN [cgztdev] WITH PASSWORD = 'pass#word1'
 
-*User map with Login
+--User map with Login
 CREATE USER [cgztdev] FOR LOGIN [cgztdev]
 
-*Step 2
+--Step 2
 USE [cgzt-school-db-dev]
 CREATE SCHEMA [cgzt]
 
 
-*Step 3
+--Step 3
 --user mapp with schema
 CREATE USER [cgztdev]
 	FOR LOGIN [cgztdev]
 	WITH DEFAULT_SCHEMA = [cgzt]
 GO
 
-*Add user to the database owner role
+--Add user to the database owner role
 EXEC sp_addrolemember N'db_owner', [cgztdev]
 GO
 
