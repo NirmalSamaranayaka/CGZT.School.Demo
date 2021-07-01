@@ -67,8 +67,8 @@ After configure server you will be able to see below window and then press "Publ
 ![124051415-11276c80-da4f-11eb-9c6e-61890eedc332](https://user-images.githubusercontent.com/86515501/124055110-e1c82e00-da55-11eb-8f4e-924a95bfbbc0.png)
 
 Then you can see publish output as below
+![db2](https://user-images.githubusercontent.com/86515501/124056131-be05e780-da57-11eb-9e84-f8b1180e44fc.PNG)
 
-![db2](https://user-images.githubusercontent.com/86515501/124056014-872fd180-da57-11eb-8d01-a8fb65ac00c2.PNG)
 
 
 After publishing database project, you are able to see table details in SQL management Studio(SSMS) as below
