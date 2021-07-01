@@ -63,12 +63,12 @@ right click Database project and Click "Publish" buton
 Ten please setup give your server, Database, user name and password and then check cnnection okay or not using"Test Connacron" as below
 ![image](https://user-images.githubusercontent.com/86515501/124051316-d7eefc80-da4e-11eb-9e15-5944c2b3ab1d.png)
 
-After Click "Publish" will come popup as below
+After configure server you will be able to see below window and then press "Publish"buttonand  Click "Publish" will come popup as below
 ![124051415-11276c80-da4f-11eb-9c6e-61890eedc332](https://user-images.githubusercontent.com/86515501/124055110-e1c82e00-da55-11eb-8f4e-924a95bfbbc0.png)
 
-After configure server you will be able to see below window and then press "Publish"button
+Then you can see publish output as below
 
-![image](https://user-images.githubusercontent.com/86515501/124051415-11276c80-da4f-11eb-9c6e-61890eedc332.png
+![db2](https://user-images.githubusercontent.com/86515501/124056014-872fd180-da57-11eb-8d01-a8fb65ac00c2.PNG)
 
 
 After publishing database project, you are able to see table details in SQL management Studio(SSMS) as below
