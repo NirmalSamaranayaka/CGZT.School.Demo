@@ -80,7 +80,7 @@ Then goto "CGZT.School.Demo.WebAPI" project and open "appsettings.Development.js
 ![Capturew](https://user-images.githubusercontent.com/86515501/124051978-176a1880-da50-11eb-9a88-03bec594c272.PNG)
 
 
-Adter setup Database you can chack main project "CGZT.School.Demo.WebAPI" and Run project. Then you will be able to see all api details and you can test this API using Swagger/ Postman
+4.Adter setup Database you can chack main project "CGZT.School.Demo.WebAPI" and Run project. Then you will be able to see all api details and you can test this API using Swagger/ Postman
 
 ![image](https://user-images.githubusercontent.com/86515501/124052179-80519080-da50-11eb-82ca-8787609117a4.png)
 
