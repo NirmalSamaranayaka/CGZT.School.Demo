@@ -12,6 +12,6 @@ namespace CGZT.School.Demo.Contracts.Manager
     {
         ServiceResponse GetTeacherWiseStudentDetails();
         ServiceResponse GetTeacherWiseStudentDetails(List<string> teacher);
-        ServiceResponse AddTeacherWiseStudentDetails(TeacherStudentMapping request);
+        ServiceResponse AddTeacherWiseStudentDetails(TeacherStudentMappings request);
     }
 }

@@ -16,7 +16,6 @@ namespace CGZT.School.Demo.DataContext.DemoDataModels
         public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
-        public bool? IsSuspend { get; set; }
         public string CreatedBy { get; set; }
         public DateTime CreatedAt { get; set; }
         public string UpdatedBy { get; set; }

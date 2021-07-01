@@ -9,9 +9,9 @@ namespace CGZT.School.Demo.Contracts.Repository
 {
     public interface IStudentTeacherDetailsRepository
     {
-        List<TeacherStudentMapping> GetTeacherWiseStudentDetails();
+        List<TeacherStudentMappings> GetTeacherWiseStudentDetails();
         List<string> GetTeacherWiseStudentDetails(List<string> teacher);
         void Save();
-        TeacherStudentMapping SaveStudentTeacherDetails(TeacherStudentMapping saveObject);
+        TeacherStudentMappings SaveStudentTeacherDetails(TeacherStudentMappings saveObject);
     }
 }

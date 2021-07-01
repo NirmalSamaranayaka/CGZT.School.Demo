@@ -49,27 +49,26 @@ namespace CGZT.School.Demo.DataAccess.Mappers
                 //cfg.CreateMap<DemoTTeacher, TeacherStudentMapping>()
                 //    .ForMember(p => p.Students, q => q.MapFrom(r => r.DemoTTeacherStudentMappings));
 
-
-                cfg.CreateMap<DemoTTeacher, TeacherStudentMapping>()
+                cfg.CreateMap<DemoTTeacher, TeacherStudentMappings>()
                     .ForMember(p => p.Students, q => q.MapFrom(x => x.DemoTTeacherStudentMappings.Select(y => y.DemoTStudent).ToList()));
 
 
-                cfg.CreateMap<TeacherStudentMapping, DemoTTeacher>()
+                cfg.CreateMap<TeacherStudentMappings, DemoTTeacher>()
                  .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Teacher))
                   .ForMember(dest => dest.DemoTTeacherStudentMappings, opt => opt.MapFrom(src => src.Students))
                   .AfterMap((src, dest) => {
                       foreach (var b in dest.DemoTTeacherStudentMappings)
                       {
-                          b.DemoTStudentId = src.Id;
+                          b.DemoTStudentId = src.Id.Value;
                       }
                   });
 
-               cfg.CreateMap<DemoTStudent, TeacherStudentMapping>()
+               cfg.CreateMap<DemoTStudent, TeacherStudentMappings>()
                           .ForMember(dest => dest.Students, opt => opt.MapFrom(src => src.Id))
                          .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src));
 
 
-                cfg.CreateMap<DemoTTeacherStudentMapping, TeacherStudentMapping>()
+                cfg.CreateMap<DemoTTeacherStudentMapping, TeacherStudentMappings>()
                 .ForMember(t => t.Students, m => m.MapFrom(u => u.DemoTStudent))
                       .ForMember(t => t.Id, m => m.MapFrom(u => u.DemoTStudentId))
                       .ForMember(t => t.Teacher, m => m.MapFrom(u => u.DemoTTeacher))

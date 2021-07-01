@@ -49,7 +49,7 @@ namespace CGZT.School.Demo.WebAPI.Controllers
         }
 
         [HttpPost("AddTeacherWiseStudentList")]
-        public ServiceResponse AddStudentDetail([FromBody] TeacherStudentMapping request)
+        public ServiceResponse AddStudentDetail(TeacherStudentMappings request)
         {
             try
             {

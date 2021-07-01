@@ -22,9 +22,9 @@ namespace CGZT.School.Demo.DataAccess.Repository
             _entityMapper = entityMapper;
             _demoEntities = demoEntities;
         }
-        public List<TeacherStudentMapping> GetTeacherWiseStudentDetails()
+        public List<TeacherStudentMappings> GetTeacherWiseStudentDetails()
         {
-            var dbObject = _demoEntities.DemoTTeachers.Select(p => new TeacherStudentMapping {
+            var dbObject = _demoEntities.DemoTTeachers.Select(p => new TeacherStudentMappings {
                 Id = p.Id,
                 Teacher = p.Email,
                 Students = p.DemoTTeacherStudentMappings.Select(q => q.DemoTStudent.Email)
@@ -47,15 +47,25 @@ namespace CGZT.School.Demo.DataAccess.Repository
             var result = query.Select(p=>p.DemoTStudent.Email).ToList();
             return result;
         }
-        public TeacherStudentMapping SaveStudentTeacherDetails(TeacherStudentMapping saveObject)
+        public TeacherStudentMappings SaveStudentTeacherDetails(TeacherStudentMappings saveObject)
         {
-            var mappedentity = _entityMapper.Map<TeacherStudentMapping, DemoTTeacher>(saveObject);
+            var obj = _demoEntities.DemoTTeachers.Where(p => p.Email.ToLower() == saveObject.Teacher.ToLower()).FirstOrDefault();
+
+            var query = _demoEntities.DemoTTeacherStudentMappings.Include(p => p.DemoTTeacher).Include(p => p.DemoTStudent).AsQueryable();
+
+            foreach (var filter in saveObject.Students)
+            {
+                query = query.Where(x => x.DemoTStudent.Email.Contains(filter));
+            }
+            var result = query.Select(p => p.DemoTStudent.Id).ToList();
+
+            var mappedentity = _entityMapper.Map<TeacherStudentMappings, DemoTTeacher>(saveObject);
             mappedentity.CreatedBy = "System";
             mappedentity.CreatedAt = DateTime.Now;
 
             //_demoEntities.Set<DemoTTeacherStudentMapping>().Add(mappedentity);
             //Save();
-            return _entityMapper.Map<DemoTTeacher, TeacherStudentMapping>(mappedentity);
+            return _entityMapper.Map<DemoTTeacher, TeacherStudentMappings>(mappedentity);
         }
 
         public void Save()

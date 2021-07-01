@@ -53,11 +53,11 @@ namespace CGZT.School.Demo.Business.Managers
             }
         }
 
-        public ServiceResponse AddTeacherWiseStudentDetails(TeacherStudentMapping request)
+        public ServiceResponse AddTeacherWiseStudentDetails(TeacherStudentMappings request)
         {
             try
             {
-                StringExtensions.TrimStringProperties<TeacherStudentMapping>(request);
+                StringExtensions.TrimStringProperties<TeacherStudentMappings>(request);
 
                 //if (!_studentDetailsValidator.Validate(request, out IList<Message> messages))
                 //{

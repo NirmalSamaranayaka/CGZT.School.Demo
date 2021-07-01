@@ -135,10 +135,6 @@ namespace CGZT.School.Demo.DataContext.DemoDbContext
                     .IsRequired()
                     .HasMaxLength(200);
 
-                entity.Property(e => e.IsSuspend)
-                    .IsRequired()
-                    .HasDefaultValueSql("('false')");
-
                 entity.Property(e => e.Name)
                     .IsRequired()
                     .HasMaxLength(100);

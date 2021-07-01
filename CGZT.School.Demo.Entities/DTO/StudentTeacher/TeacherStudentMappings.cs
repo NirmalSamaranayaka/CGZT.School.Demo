@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CGZT.School.Demo.Entities.DTO.StudentTeacher
 {
-    public class TeacherStudentMapping
+    public class TeacherStudentMappings
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public string Teacher { get; set; }
         public IEnumerable<string> Students { get; set; }
     }
