@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace CGZT.School.Demo.Entities.DTO.StudentTeacher
 {
-    public class Teacher :BaseEntity
+    public class TeacherStudentWithID
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
+        public int TeacherId { get; set; }
+        public List<int> StudentId { get; set; }
     }
 }

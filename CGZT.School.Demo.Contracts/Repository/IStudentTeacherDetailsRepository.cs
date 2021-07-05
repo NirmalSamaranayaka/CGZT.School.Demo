@@ -12,6 +12,7 @@ namespace CGZT.School.Demo.Contracts.Repository
         List<TeacherStudentMappings> GetTeacherWiseStudentDetails();
         List<string> GetTeacherWiseStudentDetails(List<string> teacher);
         void Save();
-        TeacherStudentMappings SaveStudentTeacherDetails(TeacherStudentMappings saveObject);
+        List<TeacherStudentWithIDMapper> SaveStudentTeacherDetails(List<TeacherStudentWithIDMapper> saveObject);
+        TeacherStudentWithID getTeacherStudentByEmail(TeacherStudentMappings saveObject);
     }
 }
