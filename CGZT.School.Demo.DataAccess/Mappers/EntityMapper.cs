@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper.QueryableExtensions;
 
 namespace CGZT.School.Demo.DataAccess.Mappers
 {
@@ -45,7 +46,6 @@ namespace CGZT.School.Demo.DataAccess.Mappers
             _config = new MapperConfiguration(cfg =>
             {
 
-
                 //cfg.CreateMap<DemoTTeacher, TeacherStudentMapping>()
                 //    .ForMember(p => p.Students, q => q.MapFrom(r => r.DemoTTeacherStudentMappings));
 
@@ -62,6 +62,11 @@ namespace CGZT.School.Demo.DataAccess.Mappers
                           b.DemoTStudentId = src.Id.Value;
                       }
                   });
+
+
+                cfg.CreateMap<TeacherStudentWithIDMapper, DemoTTeacherStudentMapping>()
+                .ForMember(t=>t.DemoTTeacherId, m=> m.MapFrom(u=> u.TeacherId))
+                .ForMember(t => t.DemoTStudentId, m => m.MapFrom(u => u.StudentId)).ReverseMap();
 
                cfg.CreateMap<DemoTStudent, TeacherStudentMappings>()
                           .ForMember(dest => dest.Students, opt => opt.MapFrom(src => src.Id))
@@ -110,6 +115,7 @@ namespace CGZT.School.Demo.DataAccess.Mappers
             return _mapper.Map<TSource, TDestination>(source);
         }
         #endregion
+
     }
 
 }

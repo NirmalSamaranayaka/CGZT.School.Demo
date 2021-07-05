@@ -47,25 +47,30 @@ namespace CGZT.School.Demo.DataAccess.Repository
             var result = query.Select(p=>p.DemoTStudent.Email).ToList();
             return result;
         }
-        public TeacherStudentMappings SaveStudentTeacherDetails(TeacherStudentMappings saveObject)
+        public List<TeacherStudentWithIDMapper> SaveStudentTeacherDetails(List<TeacherStudentWithIDMapper> saveObject)
         {
-            var obj = _demoEntities.DemoTTeachers.Where(p => p.Email.ToLower() == saveObject.Teacher.ToLower()).FirstOrDefault();
 
-            var query = _demoEntities.DemoTTeacherStudentMappings.Include(p => p.DemoTTeacher).Include(p => p.DemoTStudent).AsQueryable();
+            var mappedentity = _entityMapper.Map<List<TeacherStudentWithIDMapper>,List<DemoTTeacherStudentMapping>>(saveObject);
+            _demoEntities.Set<DemoTTeacherStudentMapping>().AddRange(mappedentity);
+            Save();
+            return _entityMapper.Map<List<DemoTTeacherStudentMapping>, List<TeacherStudentWithIDMapper>>(mappedentity);
+        }
 
-            foreach (var filter in saveObject.Students)
+
+        public TeacherStudentWithID getTeacherStudentByEmail(TeacherStudentMappings saveObject)
+        {
+            
+            var teacher = _demoEntities.DemoTTeachers.Where(p => p.Email.ToLower() == saveObject.Teacher.Trim().ToLower()).Select(p =>  p.Id).FirstOrDefault();
+
+            var students = _demoEntities.DemoTStudents.AsEnumerable().Where(data => saveObject.Students.Any(x => data.Email.Contains(x.Trim()))).Select(p => p.Id).ToList();
+
+            var mapped = new TeacherStudentWithID
             {
-                query = query.Where(x => x.DemoTStudent.Email.Contains(filter));
-            }
-            var result = query.Select(p => p.DemoTStudent.Id).ToList();
+                TeacherId = teacher,
+                StudentId = students
+            };
 
-            var mappedentity = _entityMapper.Map<TeacherStudentMappings, DemoTTeacher>(saveObject);
-            mappedentity.CreatedBy = "System";
-            mappedentity.CreatedAt = DateTime.Now;
-
-            //_demoEntities.Set<DemoTTeacherStudentMapping>().Add(mappedentity);
-            //Save();
-            return _entityMapper.Map<DemoTTeacher, TeacherStudentMappings>(mappedentity);
+            return mapped;
         }
 
         public void Save()

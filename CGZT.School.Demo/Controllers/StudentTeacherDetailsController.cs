@@ -29,10 +29,11 @@ namespace CGZT.School.Demo.WebAPI.Controllers
         {
             _studentTeacherDetailsManager = studentTeacherDetailsManager;
             _logger = logger;
-            _teacherDetailsErrorMessageHandler = teacherDetailsErrorMessageHandler;
             _serviceResponseErrorMapper = serviceResponseErrorMapper;
-           
+            _teacherDetailsErrorMessageHandler = teacherDetailsErrorMessageHandler;
+
         }
+
 
         [HttpGet("GetTeacherWiseStudentList")]
         public ServiceResponse GetTeacherWiseStudentDetail()

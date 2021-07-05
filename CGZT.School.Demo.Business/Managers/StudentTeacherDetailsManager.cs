@@ -1,4 +1,5 @@
-﻿using CGZT.School.Demo.Common;
+﻿using CGZT.School.Demo.Business.Wrapper;
+using CGZT.School.Demo.Common;
 using CGZT.School.Demo.Contracts.Common;
 using CGZT.School.Demo.Contracts.Manager;
 using CGZT.School.Demo.Contracts.Repository;
@@ -20,11 +21,13 @@ namespace CGZT.School.Demo.Business.Managers
 
         private readonly IMapper<object, ServiceResponse> _serviceResponseMapper;
 
+        private readonly IMapper<TeacherStudentDataMapperWrapper, List<TeacherStudentWithIDMapper>> _teacherStudentDataMapper;
 
-        public StudentTeacherDetailsManager(IStudentTeacherDetailsRepository studentTeacherDetailsRepository, IMapper<object, ServiceResponse> serviceResponseMapper)
+        public StudentTeacherDetailsManager(IStudentTeacherDetailsRepository studentTeacherDetailsRepository, IMapper<object, ServiceResponse> serviceResponseMapper, IMapper<TeacherStudentDataMapperWrapper, List<TeacherStudentWithIDMapper>> teacherStudentDataMapper)
         {
             _studentTeacherDetailsRepository = studentTeacherDetailsRepository;
             _serviceResponseMapper = serviceResponseMapper;
+            _teacherStudentDataMapper = teacherStudentDataMapper;
         }
 
         public ServiceResponse GetTeacherWiseStudentDetails()
@@ -59,12 +62,17 @@ namespace CGZT.School.Demo.Business.Managers
             {
                 StringExtensions.TrimStringProperties<TeacherStudentMappings>(request);
 
+                var returnObj= _studentTeacherDetailsRepository.getTeacherStudentByEmail(request);
+
+
+                var teacherStudentDataMapperWrapper = new TeacherStudentDataMapperWrapper {teacherStudentWithID  = returnObj };
                 //if (!_studentDetailsValidator.Validate(request, out IList<Message> messages))
                 //{
                 //    return _serviceResponseErrorMapper.Map(messages);
                 //}
 
-                var returnObject = _studentTeacherDetailsRepository.SaveStudentTeacherDetails(request);
+                var saveObject = _teacherStudentDataMapper.Map(teacherStudentDataMapperWrapper);
+                var returnObject = _studentTeacherDetailsRepository.SaveStudentTeacherDetails(saveObject);
                 return _serviceResponseMapper.Map(returnObject);
 
             }

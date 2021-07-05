@@ -2,6 +2,7 @@
 using CGZT.School.Demo.Business.Mappers;
 using CGZT.School.Demo.Business.Mappers.Notification;
 using CGZT.School.Demo.Business.Mappers.Student;
+using CGZT.School.Demo.Business.Mappers.TeacherStudent;
 using CGZT.School.Demo.Business.Validators;
 using CGZT.School.Demo.Business.Wrapper;
 using CGZT.School.Demo.Contracts.Common;
@@ -57,6 +58,7 @@ namespace CGZT.School.Demo.WebAPI.Extensions
             services.AddSingleton<IMapper<Object, ServiceResponse>, ServiceResponseMapper>();
             services.AddSingleton<IMapper<StudentDataMapperWrapper, Students>, StudentDataMapper>();
             services.AddSingleton<IMapper<NotificationDataMapperWrapper, NotificationRecipients>, NotificationDataMapper>();
+            services.AddSingleton<IMapper<TeacherStudentDataMapperWrapper, List<TeacherStudentWithIDMapper>>, TeacherStudentDataMapper >();
             #endregion
 
             #region utils
